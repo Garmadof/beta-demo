@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link href="../garmadof_game.loc/source/pix_font.ttf">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="includes/game_style.css">
+	<link rel="stylesheet" type="text/css" href="includes/weapon.css">
+	<title>demo</title>
+</head>
+<body>
+
+<!--level stat menu-->
+	<div class="wrapper">
+		<div class="stats">
+			<div class="container">
+				<div class="row g-0">
+					<div class="col-sm">
+						<div class="menu" id="weaponary_lvl">
+							weapons
+						</div>
+					</div>
+					<div class="col-5">
+						<div class="menu" id="wave">
+							МОНСТРОВ:
+						</div>
+					</div>
+					<div class="col-sm">
+						<div class="menu">
+							coins
+						</div>	
+					</div>
+				</div>
+				<div class="row g-0">
+					<div class="col">
+						<div class="menu container weap_lvl" >
+							<div class="row weapon">	
+								<div class="col-auto" id="slot1">
+									<div class="menu" id="weap_lvl1">
+										
+									</div>
+								</div>
+								<div class="col-auto" id="slot2">
+									<div class="menu"  id="weap_lvl2">
+										
+									</div>
+								</div>
+								<div class="col-auto" id="slot3">
+									<div class="menu" id="weap_lvl3">
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-5">
+						<div class="menuMonst container" >
+							<div class="row g-0" id="monster">    
+								
+							</div>
+						</div>
+					</div>
+					<div class="col-sm">
+						<div class="menu">
+							Энергия стабильна
+						</div>	
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="content-all">
+			<form>
+				<input type="button" value="End Turn" id="endBtn" ></input>
+			</form>
+		</div>
+	</div>
+
+<!--battlefield-->	
+	<div class="field">
+		<div class="content-all">
+			<div class ="battlefield" id="battle">
+
+			</div>
+		</div>	
+	</div>
+<!--character menu-->
+
+		<div class="basement">
+		<!--1st-character-menu-->
+			<div class="st-menu content-all">
+			<!--weapons-and-char-->
+					<div class="hero">
+						<div class="weapons">
+							<div class="frame">
+								<img src="source/frame_sword.png" class="hero-class">
+							</div>
+							<div  class="weapon_fr" id="nd">
+							</div>
+							<text class ="hand">Left hand</text>
+						</div>
+						<div class="class">
+							<div>
+								<img src="source/swordsman.png" class="character" id="char">
+							</div>
+							<div class = "shape">
+								<div id="hp">
+									hp
+								</div>
+							</div>
+							<div class = "stat" id="dmg">
+								
+							</div>
+						</div>
+						<div class="weapons">
+							<div class="weapon_fr" id= "st">
+							</div>	
+							<text class = "hand">Right hand</text>
+						</div>
+					</div>
+
+					<div class="level" id="level">
+					</div>
+					<div class="operant">
+						<div class="act" id="plus">
+						</div>
+						<div class="act" id="minus">
+						</div>
+						<text class="amount">Количество <br> 
+							оперантов:</text>
+					</div>
+					<div class="damage-card" id="damage">
+					</div>	
+			</div>			
+		</div>
+
+<!--prompt-->
+	<div class="modal" id="prompts">
+		<div class="modal-cont">
+			<div class="modal-head">
+				<h2 id="promptText"></h2>
+			</div>
+			<input type ="text" value="1" id="pInput"></input>
+			<div class="btnsok">
+				<span type="button" class="send-res" id="sendRes"></span>
+			</div>
+		</div>
+	</div>
+	<div class="modal" id="prompts1">
+		<div class="modal-cont">
+			<div class="modal-head">
+				<h2 id="promptText1"></h2>
+			</div>
+			<input type ="text" value="1" id="pInput1"></input>
+			<div class="btnsok">
+				<span type="button" class="send-res" id="sendRes1"></span>
+			</div>
+		</div>
+	</div>
+<!--confirm-->
+	<div class="modal" id="change">
+		<div class="modal-cont">
+			<div class="modal-head">
+				<h2 id="text"></h2>
+			</div>
+			<div class="btns">
+				<span type="button" class="right" id="yesBtn"></span>
+				<span type="button" class="left" id="noBtn"></span>
+			</div>
+		</div>
+	</div>
+<!--No-->
+	<div class="modal" id="no">
+		<div class="modal-cont">
+			<div class="modal-head" id="head">
+				<h2></h2>
+			</div>
+			<div class="btnsok">
+				<span type="button" class="right" id="okBtn">Ok</span>
+			</div>
+		</div>
+	</div>
+	<div id="lvlChoose">				
+	</div>
+	<div id="dmgchoose">
+				
+	</div>
+<script type="text/javascript" src="includes/code.js"></script>
+</body>
+</html>

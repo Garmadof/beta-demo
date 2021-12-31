@@ -1,0 +1,551 @@
+.claws {
+	background: url(../source/claws.png) no-repeat;
+	width: 64px;
+	height: 64px;
+}
+
+.swordPart {
+	width: 64px;
+	height: 64px;
+}
+
+.rustyStick {
+	width: 64px;
+	height: 64px;
+
+}
+
+.sword {
+	background: url(../source/sword_onehands.png) no-repeat;
+	width: 64px;
+	height: 64px;
+}
+
+.bow {
+	width: 64px;
+	height: 64px;
+}
+
+.twohandedSword {
+	background: url(../source/sword_twohands.png) no-repeat;
+	width: 64px;
+	height: 64px;
+}
+
+.fiveToothedSpear {
+    width: 64px;
+	height: 64px;
+}
+
+/*---- 3* ----*/
+.axe {
+	background: url(../source/axe_big.png) no-repeat;
+	width: 64px;
+	height: 64px;
+}
+
+.mace {
+	width: 64px;
+	height: 64px;
+}
+
+.sacredKatana {
+	width: 64px;
+	height: 64px;
+}
+
+/*---- 4* ----*/
+.swordOfEarth {
+	width: 64px;
+	height: 64px;
+}
+
+.chainFangs {
+	width: 64px;
+	height: 64px;
+}
+
+.darkScimitar {
+	width: 64px;
+	height: 64px;
+}
+
+/*---- 5* ----*/
+.goddnessBlade {
+	width: 64px;
+	height: 64px;
+}
+
+.odinsSpear {
+	width: 64px;
+	height: 64px;
+}
+
+.cleawingSky {
+	width: 64px;
+	height: 64px;
+}
+.heroSword {
+    width: 64px;
+	height: 64px;
+}
+
+
+
+
+/*//global var
+var chances = [];
+//weapons var
+var weapon1 = document.getElementById("weap_lvl1");
+var weapon2 = document.getElementById("weap_lvl2");
+var weapon3 = document.getElementById("weap_lvl3");
+
+//monsters var
+var container = document.getElementById("monster");
+var monster1;
+var monster2;
+var monster3;
+var number;
+
+//objects
+    //battle
+    var battlefield= {
+        maxMonsters: 3,
+        maxWeapons: 3,
+        character: 1,
+        boss: 1,
+        round: 10
+    };
+    //weapons
+        //1* weapon
+            var weapons = [ [ {
+                                name: "Сlaws",
+                                id: "claws",
+                                type: "onehanded",
+                                damage: 10,
+                                specialAbility: "none",
+                                take: function take (id) {
+                                    document.getElementById("1st").innerHTML = sword_part.name; 
+                                } },
+                                {
+                                name: "Rusty stick",
+                                id: "rustyStick",
+                                type: "twohanded",
+                                damage: 20,
+                                specialAbility: "none",
+                                take: function take (id) {
+                                    document.getElementById("1st").innerHTML = sword_part.name; 
+                                } },
+                                {
+                                name: "Sword part",
+                                id: "swordPart",
+                                type: "onehanded",
+                                damage: 20,
+                                specialAbility: "none",
+                                take: function take (id) {
+                                    document.getElementById("1st").innerHTML = sword_part.name; 
+                                } }],
+                        //2* weapon
+                            [ {
+                                name: "Sword",
+                                id: "sword",
+                                type: "onehanded",
+                                damage: 25,
+                                specialAbility: "none",
+                                take: function take (id) {
+                                    document.getElementById("1st").innerHTML = sword_part.name; 
+                                } },
+                                {
+                                name: "Bow",
+                                id: "bow",
+                                type: "onehanded",
+                                damage: 35,
+                                specialAbility: "none",
+                                take: function take (id) {
+                                    document.getElementById("1st").innerHTML = sword_part.name; 
+                                } },
+                            
+                                {
+                                name: "Twohanded sword",
+                                id: "twohandedSword",
+                                type: "twohanded",
+                                damage: 40,
+                                specialAbility: "none",
+                                take: function take (id) {
+                                    document.getElementById("1st").innerHTML = sword_part.name; 
+                                } } ],
+                            
+
+                        //3* weapon
+                            [ {
+                                name: "Axe",
+                                id: "axe",
+                                type: "twohanded",
+                                damage: 40,
+                                specialAbility: "none",
+                                take: function (id) {
+                                    document.getElementById("1st").innerHTML = sword_part.name; 
+                                } },
+                                {
+                                name: "Mace",
+                                id: "mace",
+                                type: "onehanded",
+                                damage: 30,
+                                specialAbility: "none"
+                                },
+                                {
+                                name: "Sacred katana",
+                                id: "sacredKatana",
+                                type: "onehanded",
+                                damage: 40,
+                                specialAbility: "splash/2"
+                                } ],
+
+                        //4* weapon
+                            [ {
+                                name: "Sword of earth",
+                                id: "swordOfEarth",
+                                type: "onehanded",
+                                damage: 50,
+                                specialAbility: "splash(30)"
+                                },
+                                {
+                                name: "Chain fangs",
+                                id: "chainFangs",
+                                type: "onehanded",
+                                damage: 50,
+                                specialAbility: "mass(2)"
+                                },
+                                {
+                                name: "Dark scimitar",
+                                id: "darkScimitar",
+                                type: "onehanded",
+                                damage: 40,
+                                specialAbility: "splash"
+                                } ],
+
+                        //5* weapon
+                            [ {
+                                name: "Goddness blade",
+                                id: "goddnessBlade",
+                                type: "twohanded",
+                                damage: 70,
+                                specialAbility: "splash+vamp10%"
+                                },
+                                {
+                                name: "Odins spear",
+                                id: "odinsSpear",
+                                type: "twohanded",
+                                damage: 40,
+                                specialAbility: "splash+contratt"
+                                },
+                                {
+                                name: "Cleaving sky",
+                                id: "cleawingSky",
+                                type: "twohanded",
+                                damage: 80,
+                                specialAbility: "splash x2"
+                             } ] ];
+//monsters 
+    //1lvl
+    var monsters = [ [ {name: "Slime",
+                    id: "slime",
+                    hp: 15,
+                    dmg: 1,
+                    specialAbility1: "none",
+                    specialAbility2: "none"},
+                    {name: "Cobold",
+                    id: "cobold",
+                    hp: 15,
+                    dmg: 2,
+                    specialAbility1: "stun - " + chances[15] +"%" ,
+                    stun: function (percent) {
+                        var chance = Math.floor(Math.random() * 100);
+                        if (chance < percent) {
+                            //stun ability
+                        }
+                    },
+                    specialAbility2: "none"},
+                    {name: "Gnoll",
+                    id: "gnoll",
+                    hp: 15,
+                    dmg: 2,
+                    specialAbility1: "none",
+                    specialAbility2: "none"},
+                    {name:"Wolf-Demon",
+                    id:"wolfDemon",
+                    hp: 10,
+                    dmg: 3,
+                    specialAbility1: "Crit chance - " + chances[10] + "%" ,
+                    critChance: function(percent) {
+                        var chance = Math.floor(Math.random() * 100)
+                        if (chance < percent) {
+                            //crit func
+                        }
+                    },
+                    specialAbility2: "none"},
+                    {name: "Troll",
+                    id: "troll",
+                    hp: 10,
+                    dmg: 2,
+                    specialAbility1: "contrattack - " + chances[10] + "%", 
+                    contrattack: function(percent) {
+                        var chance = Math.floor(Math.random() * 100);
+                        if (chance < percent) {
+                            //contrattck func
+                        }
+                    },
+                    specialAbility2: "none"} ],
+                [{name: "Rascal",
+                id: "rascal",
+                hp: 25,
+                dmg: 3,
+                specialAbility1: "none",
+                specialAbility2: "none"},
+                {name: "Desertire",
+                id: "desertire",
+                hp: 30,
+                dmg: 2,
+                specialAbility1: "stun - " + chances[17] + "%",
+                stun: function(percent) {
+                    var chance = Math.floor(Math.random() * 100);
+                    if (chance < percent) {
+                        //stun func
+                    }
+                },
+                specialAbility2: "none"},
+                {name: "Demon newbie",
+                id: "demonNewbie",
+                hp: 20,
+                dmg: 3,
+                specialAbility1: "none",
+                specialAbility2: "none",},
+                {name: "Goblin",
+                id: "goblin",
+                hp: 25,
+                dmg: 2,
+                specialAbility1: "paralasys - " + chances[20] + "%",
+                paralasys: function (percent) {
+                    var chance = Math.floor(Math.random() * 100);
+                    if (chance < percent) {
+                        // paralasys func
+                    }
+                },
+                specialAbility2: "none"},
+                {name: "Bear",
+                id: "bear",
+                hp: 30,
+                dmg: 1,
+                specialAbility1: "stun - " + chances[25] + "%",
+                stun: function(percent) {
+                    var chance = Math.floor(Math.random() * 100);
+                    if (chance < percent) {
+                        //stun func
+                    }
+                },
+                specialAbility2: "none"} ],
+                [{name: "Troll warlord",
+                id:"trollWarlord",
+                hp: 40,
+                dmg: 5,
+                specialAbility1: "contrattack - " + chances[17] + "%",
+                contrattack: function(percent) {
+                    var chance = Math.floor(Math.random() * 100);
+                    if (chance < percent) {
+                        //contrattk func
+                    }
+                },
+                specialAbility2: "none"},
+                {name: "Demon",
+                id: "demon",
+                hp: 35,
+                dmg: 3,
+                specialAbility1: "burn",
+                burn: function() {
+                    // burn func
+                },
+                specialAbility2: "none"},
+                {name: "Wolf Leader",
+                id: "wolfLeader",
+                hp: 30,
+                dmg: 4,
+                specialAbility1: "Crit chance - " + chances[25] + "%",
+                critChance: function(percent) {
+                    var chance = Math.floor(Math.random() * 100);
+                    if (chance < percent) {
+                        //crit func
+                    }
+                },
+                specialAbility2: "none"},
+                {name: "Orc",
+                id: "orc",
+                hp: 35,
+                dmg: 4,
+                specialAbility1: "none",
+                specialAbility2: "none"},
+                {name: "Magic slime",
+                id: "magicSlime",
+                hp: 20,
+                dmg: 4,
+                specialAbility1: "absorb damage - " + chances[10] + "%",
+                absorb: function(percent) {
+                    var chance = Math.floor(Math.random() * 100);
+                    if (chance < percent) {
+                        //absorb func
+                    }
+                },
+                specialAbility2: "none"} ],
+                [{name: "Dark knight",
+                id: "darkKnight",
+                hp: 45,
+                dmg: 5,
+                specialAbility1: "Strengthen: +2 to damage",
+                strengthen: function() {
+                    //strength func
+                },
+                specialAbility2: "none"},
+                {name: "Rascals leader",
+                id: "rascalsLeader",
+                hp: 50,
+                dmg: 4,
+                specialAbility1: "stun - " + chances[20] + "%",
+                stun: function(percent) {
+                    var chance = Math.floor(Math.random() * 100);
+                    if (chance < percent) {
+                        //stun func
+                    }
+                },
+                specialAbility2: "none"},
+                {name: "Wolf rider",
+                id: "wolfRider",
+                hp: 40,
+                dmg: 4,
+                specialAbility1: "Crit chance - " + chances[30] + "%",
+                critChance: function(percent) {
+                    var chance = Math.floor(Math.random() * 100);
+                    if (chance < percent) {
+                        //crit chance func
+                    }
+                },
+                specialAbility2: "Bleeding: -10% of your hp during 2 moves",
+                bleeding: function() {
+                    //bleeding func
+                } } ],
+                [{name: "Demon general",
+                id: "demonGeneral",
+                hp: 55,
+                dmg: 5,
+                specialAbility1: "burn - 3 moves with 2 dmg each",
+                burn: function() {
+                    //burn function
+                },
+                specialAbility2: "x2 dmg on burned",
+                multiplier: function() {
+                    // multiplier func
+                }} ],
+                [{name:"Orc Leader",
+                id: "orcLeader",
+                hp:65,
+                dmg: 6,
+                specialAbility1: "Crit chance - " + chances[40] + "%",
+                critChance: function(percent) {
+                    var chance = Math.floor(Math.random() * 100);
+                    if (chance < percent) {
+                        //crit chn func
+                    }
+                },
+                specialAbility2: "Lightning strike",
+                lightningStrike:function() {
+                    //strike func
+                } },
+                2 ] ];
+
+
+//random weapon_id generator
+function random_weap (weap) {
+    var rnd = Math.floor(Math.random() * 100 + 1);
+    var weapon;
+    if (rnd >= 90) {
+        weapon = weapons[Math.floor(Math.random() * 5)];
+        var l = weapon.length;
+        weapon = weapon[Math.floor(Math.random() * l)];
+        weap.className +=" " + weapon.id;
+        weapon = " ";
+    }
+    else if (rnd >= 70 && rnd < 90 ) {
+        weapon = weapons[Math.floor(Math.random() * 4)];
+        var l = weapon.length;
+        weapon = weapon[Math.floor(Math.random() * l)];
+        weap.className +=" " + weapon.id;
+        weapon = " ";
+    }
+    else {
+        weapon = weapons[Math.floor(Math.random() * 3)];
+        var l = weapon.length;
+        weapon = weapon[Math.floor(Math.random() * l)]; 
+        weap.className +=" " + weapon.id;
+        weapon = " ";
+    }
+    return weapon;
+};
+
+//creating random weapon
+weapon1.innerHTML = random_weap(weapon1);
+weapon2.innerHTML = random_weap(weapon2);
+weapon3.innerHTML = random_weap(weapon3);
+
+//generating monsters 
+function random_monst () {
+    random_monster = monsters[Math.floor(Math.random() * 5)][Math.floor(Math.random() * this.length)].name;
+    return random_monster;    
+}
+
+//creating monster
+function creating () {
+    number = Math.floor(Math.random() * 3) + 1;;
+    if (number == 1) {
+        monster1 = document.createElement("div");
+        monster1.classname = "col-sm", "menu";
+        monster1.id ="monster_1";
+        container.appendChild(monster1);
+        document.getElementById("monster_1").innerHTML = random_monst();
+    }
+    else if (number == 2) {
+        monster1 = document.createElement("div");
+        monster1.className = "col-sm", "menu";
+        monster1.id ="monster_1";
+        container.appendChild(monster1);
+        document.getElementById("monster_1").innerHTML = random_monst() + " / ";
+        monster2 = document.createElement("div");
+        monster2.className = "col-sm", "menu";
+        monster2.id ="monster_2";
+        container.appendChild(monster2);
+        document.getElementById("monster_2").innerHTML = random_monst();
+    }
+    else {
+        monster1 = document.createElement("div");
+        monster1.className = "col-sm", "menu";
+        monster1.id ="monster_1";
+        container.appendChild(monster1);
+        document.getElementById("monster_1").innerHTML = random_monst() + " / ";
+        monster2 = document.createElement("div");
+        monster2.className = "col-sm", "menu";
+        monster2.id ="monster_2";
+        container.appendChild(monster2);
+        document.getElementById("monster_2").innerHTML = random_monst() + " / ";
+        monster3 = document.createElement("div");
+        monster3.className = "col-sm", "menu";
+        monster3.id ="monster_3";
+        container.appendChild(monster3);
+        document.getElementById("monster_3").innerHTML = random_monst();
+    } ;
+};
+creating();
+
+function init() {
+    for (var i = 0; i < 100; i++) {
+        chances[i] = i;
+    }
+};
+
+window.onload = init();

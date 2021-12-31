@@ -1,0 +1,43 @@
+else if (monst_number == 2) {
+        function level_monst2 () {  
+            monst_lvl = Math.floor(Math.random() * 5) + 1;
+            if (monst_lvl == 5) {
+              monster2 = random_monst5();
+            }
+            else if (monst_lvl == 4) {
+              monster2 = random_monst4();
+            }
+            else if (monst_lvl == 3) {
+              monster2 = random_monst3();
+            }
+            else if (monst_lvl == 2) {
+              monster2 = random_monst2();
+            }
+            else if (monst_lvl == 1) {
+              monster2 = random_monst1();
+            }
+            return monster2;
+        }
+    }
+    else if (monst_number == 1) {
+        function level_monst3 () {  
+            monst_lvl = Math.floor(Math.random() * 5) + 1;
+            if (monst_lvl == 5) {
+              monster1 = random_monst5();
+            }
+            else if (monst_lvl == 4) {
+              monster1 = random_monst4();
+            }
+            else if (monst_lvl == 3) {
+              monster1 = random_monst3();
+            }
+            else if (monst_lvl == 2) {
+              monster1 = random_monst2();
+            }
+            else if (monst_lvl == 1) {
+              monster1 = random_monst1();
+              return monster;
+            }
+            document.getElementById("monster3").innerHTML = level_monst3(monster);
+        }  
+    }
